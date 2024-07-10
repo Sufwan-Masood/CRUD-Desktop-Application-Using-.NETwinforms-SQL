@@ -1,0 +1,25 @@
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\CRUD WINFORM APP.exe
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\CRUD WINFORM APP.deps.json
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\CRUD WINFORM APP.runtimeconfig.json
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\CRUD WINFORM APP.dll
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\CRUD WINFORM APP.pdb
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD_WINFORM_APP.Form1.resources
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD WINFORM APP.csproj.GenerateResource.cache
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD WINFORM APP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD WINFORM APP.AssemblyInfoInputs.cache
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD WINFORM APP.AssemblyInfo.cs
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD WINFORM APP.csproj.CoreCompileInputs.cache
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD WINFORM APP.dll
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\refint\CRUD WINFORM APP.dll
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD WINFORM APP.pdb
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD WINFORM APP.genruntimeconfig.cache
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\ref\CRUD WINFORM APP.dll
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\CRUD WINFORM APP.dll.config
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD WINFORM APP.csproj.AssemblyReference.cache
+C:\Users\GOLDEN\source\repos\CRUD WINFORM APP\obj\Debug\net6.0-windows\CRUD WINFORM APP.csproj.CopyComplete
