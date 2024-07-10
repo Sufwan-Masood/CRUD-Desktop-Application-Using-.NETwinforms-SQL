@@ -51,6 +51,10 @@
             button5 = new Button();
             dataGridView1 = new DataGridView();
             errorProvider1 = new ErrorProvider(components);
+            button6 = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
+            label8 = new Label();
+            textBox3 = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -97,6 +101,7 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(377, 33);
             comboBox2.TabIndex = 4;
+            comboBox2.KeyPress += comboBox2_KeyPress;
             comboBox2.Leave += comboBox2_Leave;
             // 
             // label6
@@ -212,6 +217,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(377, 33);
             comboBox1.TabIndex = 2;
+            comboBox1.KeyPress += comboBox1_KeyPress;
             comboBox1.Leave += comboBox1_Leave;
             // 
             // numericUpDown1
@@ -281,6 +287,7 @@
             button4.TabIndex = 5;
             button4.Text = "VIEW";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -292,17 +299,18 @@
             button5.TabIndex = 6;
             button5.Text = "RESET";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = SystemColors.HotTrack;
-            dataGridView1.Location = new Point(62, 376);
+            dataGridView1.Location = new Point(62, 461);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 35;
-            dataGridView1.Size = new Size(1020, 248);
+            dataGridView1.Size = new Size(1020, 207);
             dataGridView1.TabIndex = 7;
             dataGridView1.Visible = false;
             dataGridView1.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
@@ -311,11 +319,49 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // button6
+            // 
+            button6.BackColor = Color.Transparent;
+            errorProvider1.SetIconPadding(button6, 90);
+            button6.Image = (Image)resources.GetObject("button6.Image");
+            button6.Location = new Point(935, 373);
+            button6.Name = "button6";
+            button6.Size = new Size(67, 69);
+            button6.TabIndex = 10;
+            button6.Text = " ";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Dubai Medium", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(390, 385);
+            label8.Name = "label8";
+            label8.Size = new Size(111, 48);
+            label8.TabIndex = 8;
+            label8.Text = "Search:";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(537, 394);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(377, 33);
+            textBox3.TabIndex = 0;
+            textBox3.TextChanged += textBox3_TextChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1130, 636);
+            ClientSize = new Size(1130, 719);
+            Controls.Add(button6);
+            Controls.Add(textBox3);
+            Controls.Add(label8);
             Controls.Add(dataGridView1);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -361,5 +407,9 @@
         private Button button5;
         private DataGridView dataGridView1;
         private ErrorProvider errorProvider1;
+        private System.Windows.Forms.Timer timer1;
+        private TextBox textBox3;
+        private Label label8;
+        private Button button6;
     }
 }

@@ -113,6 +113,7 @@ namespace CRUD_WINFORM_APP
                     {
                         MessageBox.Show("DATA INSERTED SUCCESSFULLY", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         SqlDataBinding();
+                        clearOperation();
                     }
                     else
                     {
@@ -126,16 +127,7 @@ namespace CRUD_WINFORM_APP
 
 
         }
-        private void SqlDataBinding()
-        {
-            SqlConnection con = new SqlConnection(cs);
-            string query = "select * from info;";
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            dataGridView1.DataSource = table;
-            dataGridView1.Visible = true;
-        }
+
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -157,7 +149,7 @@ namespace CRUD_WINFORM_APP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SqlDataBinding();
+
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
@@ -290,6 +282,7 @@ namespace CRUD_WINFORM_APP
                 {
                     MessageBox.Show($"Data Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     SqlDataBinding();
+                    clearOperation();
                 }
                 else
                 {
@@ -357,14 +350,98 @@ namespace CRUD_WINFORM_APP
             }
 
         }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            clearOperation();
+        }
+        private void SqlDataBinding()
+        {
+            SqlConnection con = new SqlConnection(cs);
+            string query = "select * from info;";
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            dataGridView1.DataSource = table;
+            dataGridView1.Visible = true;
+
+        }
         private void clearOperation()
         {
+            textBox1.Focus();
             textBox1.Clear();
             textBox2.Clear();
             textBox6.Clear();
             numericUpDown1.Value = 18;
-            comboBox1.SelectedItem = null;  
-            comboBox2.SelectedItem = null;
+            comboBox1.Text = null;
+            comboBox2.Text = null;
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            SqlDataBinding();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(cs);
+            string query = @"select * from info where _Name like @name + '%' ;";
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            da.SelectCommand.Parameters.AddWithValue("@name", textBox3.Text.Trim()); // adding Trim Method to remove extra white spaces
+            DataTable data = new DataTable();
+            da.Fill(data);
+            if (data.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = data;
+                dataGridView1.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Not Found!", "Error");
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(cs);
+            string query = @"select * from info where _Name like @name + '%' ;";
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            da.SelectCommand.Parameters.AddWithValue("@name", textBox3.Text.Trim()); // adding Trim Method to remove extra white spaces
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridView1.DataSource = data;
+            dataGridView1.Visible = true;
         }
     }
 }
