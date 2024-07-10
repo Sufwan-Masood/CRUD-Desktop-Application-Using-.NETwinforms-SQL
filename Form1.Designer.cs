@@ -269,6 +269,7 @@
             button3.TabIndex = 4;
             button3.Text = "DELETE";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 

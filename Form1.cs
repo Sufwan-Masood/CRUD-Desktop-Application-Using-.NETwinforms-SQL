@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data;
 using System;
 using System.Diagnostics.Eventing.Reader;
+using System.Drawing.Text;
 
 namespace CRUD_WINFORM_APP
 {
@@ -299,6 +300,71 @@ namespace CRUD_WINFORM_APP
 
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                textBox1.Focus();
+                errorProvider1.SetError(textBox1, "ID is mandatory Field");
+            }
+            else if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                textBox2.Focus();
+                errorProvider1.SetError(textBox2, "NAME is mandatory Field");
+            }
+            else if (string.IsNullOrEmpty(comboBox1.Text))
+            {
+                comboBox1.Focus();
+                errorProvider1.SetError(comboBox1, "GENDER is mandatory Field");
+            }
+            else if (string.IsNullOrEmpty(numericUpDown1.Text))
+            {
+                numericUpDown1.Focus();
+                errorProvider1.SetError(numericUpDown1, "AGE is mandatory Field");
+            }
+            else if (string.IsNullOrEmpty(comboBox2.Text))
+            {
+                comboBox2.Focus();
+                errorProvider1.SetError(comboBox2, "DESIGNATION is mandatory Field");
+            }
+            else if (string.IsNullOrEmpty(textBox6.Text))
+            {
+                textBox6.Focus();
+                errorProvider1.SetError(textBox6, "SALARY is mandatory Field");
+            }
+            else
+            {
+                SqlConnection con = new SqlConnection(cs);
+                string query = "delete from  info where Id = @id";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@id", textBox1.Text);
+                con.Open();
+                int nq = cmd.ExecuteNonQuery();
+                if (nq > 0)
+                {
+                    MessageBox.Show("Record Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    SqlDataBinding();
+                    clearOperation();
+                }
+                else
+                {
+                    MessageBox.Show("Unsuccessful Delete Operation", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                con.Close();
+            }
+
+        }
+        private void clearOperation()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox6.Clear();
+            numericUpDown1.Value = 18;
+            comboBox1.SelectedItem = null;  
+            comboBox2.SelectedItem = null;
         }
     }
 }
